@@ -5,7 +5,8 @@
 
 Dactyl Cygnus is a handwired board originally designed by @juhakaup and available at [https://github.com/juhakaup/keyboards](https://github.com/juhakaup/keyboards).
 
-![img](./keymap-drawer.svg)
+![img](./img/cygnus.jpeg)
+![img](./docs/keymap-drawer.svg)
 
 ### Dactyl Cygnus
 

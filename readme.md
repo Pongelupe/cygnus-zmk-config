@@ -9,7 +9,7 @@ Dactyl Cygnus is a handwired board originally designed by @juhakaup and availabl
 This is a wireless version of this keyboard. All build details can be found in the designer's page.
 
 ![img](./img/cygnus.jpeg)
-![img](./docs/cygnus.svg)
+![img](./img/cygnus.svg)
 
 ## Resources
 

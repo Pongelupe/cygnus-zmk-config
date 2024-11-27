@@ -1,0 +1,6 @@
+*secret*
+.DS_Store
+.vscode
+build
+build.log
+tmp/

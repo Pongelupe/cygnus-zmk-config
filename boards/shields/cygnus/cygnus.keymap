@@ -21,107 +21,106 @@
     behaviors {
         hm: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
-            label = "homerow mods";
             #binding-cells = <2>;
-            tapping_term_ms = <200>;
+            tapping-term-ms = <200>; 
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
-    };
 
-    sqt_space: sqt_space {
-        compatible = "zmk,behavior-macro";
-        #binding-cells = <0>;
-        bindings = <&macro_tap &kp SQT &kp SPACE>;
-    };
+        mk: mk {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>; 
+            flavor = "tap-preferred";
+            bindings = <&mo>, <&sk>;
+        };
 
-    dqt_space: dqt_space {
-        compatible = "zmk,behavior-macro";
-        #binding-cells = <0>;
-        bindings = <&macro_tap &kp DQT &kp SPACE>;
-    };
+        ht_repeat: ht_repeat {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>; 
+            flavor = "tap-preferred";
+            bindings = <&mo>, <&key_repeat>;
+        };
 
-    grv_space: grv_space {
-        compatible = "zmk,behavior-macro";
-        #binding-cells = <0>;
-        bindings = <&macro_tap &kp GRV &kp SPACE>;
-    };
+        sqt_space: sqt_space {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp SQT &kp SPACE>;
+        };
 
-    tilde_space: tilde_space {
-        compatible = "zmk,behavior-macro";
-        #binding-cells = <0>;
-        bindings = <&macro_tap &kp TILDE &kp SPACE>;
-    };
+        dqt_space: dqt_space {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp DQT &kp SPACE>;
+        };
 
-    caret_space: caret_space {
-        compatible = "zmk,behavior-macro";
-        #binding-cells = <0>;
-        bindings = <&macro_tap &kp CARET &kp SPACE>;
-    };
+        grv_space: grv_space {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp GRAVE &kp SPACE>;
+        };
 
-    qu: qu {
-        compatible = "zmk,behavior-macro";
-        #binding-cells = <0>;
-        bindings = <&macro_tap &kp Q &kp U>;
-    };
+        tilde_space: tilde_space {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp TILDE &kp SPACE>;
+        };
 
-    meh: meh {
-        compatible = "zmk,behavior-macro";
-        #binding-cells = <0>;
-        bindings = <&macro_tap &kp LCTRL &kp LSHIFT &kp LALT>;
-    };
+        caret_space: caret_space {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp CARET &kp SPACE>;
+        };
 
-    ht_meh: ht_meh {
-        compatible = "zmk,behavior-hold-tap";
-        #binding-cells = <2>;
-        flavor = "tap-preferred";
-        quick-tap-ms = <0>;
-        bindings = <&meh>, <&kp>;
-    };
+        qu: qu {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp Q &kp U>;
+        };
 
-    ht_meh_qu: ht_meh_qu {
-        compatible = "zmk,behavior-hold-tap";
-        #binding-cells = <2>;
-        flavor = "tap-preferred";
-        quick-tap-ms = <0>;
-        bindings = <&meh>, <&qu>;
-    };
+        meh: meh {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp LCTRL &kp LSHFT &kp LALT>;
+        };
 
-    ht_repeat: ht_repeat {
-        compatible = "zmk,behavior-hold-tap";
-        #binding-cells = <2>;
-        flavor = "tap-preferred";
-        quick-tap-ms = <0>;
-        bindings = <&mo>, <&key_repeat>;
-    };
+        ht_meh: ht_meh {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>; 
+            flavor = "tap-preferred";
+            bindings = <&meh>, <&kp>;
+        };
 
-    ht_shift: ht_shift {
-        compatible = "zmk,behavior-hold-tap";
-        #binding-cells = <2>;
-        flavor = "tap-preferred";
-        quick-tap-ms = <0>;
-        bindings = <&mo>, <&sk SHIFT>;
+        ht_meh_qu: ht_meh_qu {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>; 
+            flavor = "tap-preferred";
+            bindings = <&meh>, <&qu>;
+        };
     };
 
     keymap {
         compatible = "zmk,keymap";
 
                 qwerty_layer {
-                     display-name = "ROMAK";
+                     display-name = "QWERTY";
                      bindings = <
    &kp Q               &kp W               &kp E               &kp R               &kp T               &kp Y               &kp U               &kp I               &kp O               &kp P
    &lt FUNCTIONS A     &mt LGUI S          &mt LCTRL D         &mt LSHFT F         &mt LALT G          &mt RALT H          &mt RSHFT J         &mt RCTRL K         &mt RGUI L          &ht_meh_qu 0 0
    &kp Z               &kp X               &kp C               &kp V               &kp B               &kp N               &kp M               &kp COMMA           &kp DOT             &key_repeat        
-                                           &to QWERTY          &ht_repeat NAV 0    &lt LOWER SPACE     &lt RAISE BACKSPACE &ht_shift MEDIA 0   &to ROMAK
+                                           &to QWERTY          &ht_repeat NAV 0    &lt LOWER SPACE     &lt RAISE BACKSPACE &mk MEDIA LSHFT     &to ROMAK
                         >;
-                }
+                };
                 romak_layer {
                      display-name = "ROMAK";
                      bindings = <
    &kp Q               &kp B               &kp M               &kp G               &kp K               &kp X               &kp L               &kp O               &kp U               &kp Y
-   &lt FUNCTIONS D     &mt LGUI N          &mt LCTRL S         &mt LSHFT T         &mt LALT W          &mt RALT Z          &mt RSHFT R         &mt RCTRL A         &mt RGUI E          &ht_meh I 0 
+   &lt FUNCTIONS D     &mt LGUI N          &mt LCTRL S         &mt LSHFT T         &mt LALT W          &mt RALT Z          &mt RSHFT R         &mt RCTRL A         &mt RGUI E          &ht_meh 0 I
    &qu                 &kp F               &kp C               &kp P               &kp V               &kp J               &kp H               &kp COMMA           &kp DOT             &key_repeat         
-                                           &to QWERTY          &ht_repeat NAV 0    &lt LOWER SPACE     &lt RAISE BACKSPACE &ht_shift MEDIA 0   &to ROMAK
+                                           &to QWERTY          &ht_repeat NAV 0    &lt LOWER SPACE     &lt RAISE BACKSPACE &mk MEDIA LSHFT     &to ROMAK
                         >;
                 };
                 lower_layer {
@@ -130,18 +129,18 @@
    &trans              &kp LBRC            &kp RBRC            &kp BSLH            &none               &none               &kp N7              &kp N8              &kp N9              &none
    &kp AT              &kp LPAR            &kp RPAR            &kp AMPS            &none               &none               &kp N4              &kp N5              &kp N6              &kp DOT  
    &trans              &kp LBKT            &kp RBKT            &kp PIPE            &none               &none               &kp N1              &kp N2              &kp N3              &kp COMMA
-                                           &trans              &trans              &trans              &lt RAISE BACKSPACE &mt MEDIA N0        &trans
+                                           &trans              &trans              &trans              &lt RAISE BACKSPACE &lt MEDIA N0        &trans
                            >;
                 };
                 raise_layer {
-                     display-name = "RAISE";
-                     bindings = <
-   &none               &kp LT              &kp GT              &kp HASH            &none               &none               &kp PERC            &kp EQUAL         &kp COLON             &none
+                    display-name = "RAISE";
+                    bindings = <
+   &none               &kp LT              &kp GT              &kp HASH            &none               &none               &kp PERCENT         &kp EQUAL         &kp COLON             &none
    &caret_space        &tilde_space        &dqt_space          &sqt_space          &grv_space          &none               &kp QUESTION        &kp MINUS         &kp PLUS              &kp DOLLAR
-   &kp CARET           &kp TILDE           &kp C               &kp SQT             &kp GRV             &none               &kp EXCL            &kp SLASH         &kp STAR              &kp SEMI          
-                                           &trans              &key_repeat         &lt LOW_CP SPACE    &trans              &trans              &trans       
-                           >;
-                };
+   &kp CARET           &kp TILDE           &kp C               &kp SQT             &kp GRAVE           &none               &kp EXCL            &kp SLASH         &kp STAR              &kp SEMI          
+                                           &trans              &key_repeat         &trans              &trans              &trans              &trans       
+                          >;
+               };
                 functions_layer {
                      display-name = "FUN";
                      bindings = <
@@ -164,7 +163,7 @@
                     display-name = "MEDIA";
                     bindings = <
    &none               &none               &none               &none               &none               &none               &kp TAB             &kp ENTER           &kp ESC             &none
-   &none               &none               &none               &none               &none               &none               &none               &mt C_MUTE C_VOL_DN &kp C_VOL_UP        &none
+   &none               &none               &none               &none               &none               &none               &kp C_MUTE          &kp C_VOL_DN        &kp C_VOL_UP        &none
    &none               &none               &none               &none               &none               &none               &kp C_PP            &kp C_PREV          &kp C_NEXT          &trans
                                            &bootloader         &none               &kp SPACE           &trans              &trans              &bootloader
                            >;

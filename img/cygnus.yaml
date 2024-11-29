@@ -29,7 +29,7 @@ layers:
   - M
   - ','
   - .
-  - '&key_repeat'
+  - ;
   - {t: QWERTY, h: toggle}
   - {t: '&key_repeat', h: NAV}
   - {t: SPACE, h: LOWER}
@@ -66,7 +66,7 @@ layers:
   - H
   - ','
   - .
-  - '&key_repeat'
+  - ;
   - {t: QWERTY, h: toggle}
   - {t: '&key_repeat', h: NAV}
   - {t: SPACE, h: LOWER}
@@ -140,7 +140,7 @@ layers:
   - '!'
   - /
   - '*'
-  - ;
+  - ''
   - {t: ▽, type: trans}
   - '&key_repeat'
   - {t: ▽, type: trans}
@@ -149,46 +149,46 @@ layers:
   - {t: ▽, type: trans}
   FUN:
   - ''
-  - ''
-  - ''
-  - ''
-  - ''
+  - Meh+ 9
+  - Meh+ 8
+  - Meh+ 7
+  - Meh+ 6
   - F12
   - F7
   - F8
   - F9
   - F15
   - {type: held}
-  - ''
-  - {t: BT, h: '0'}
-  - BT NXT
-  - ''
+  - {t: LGUI, h: sticky}
+  - {t: LCTRL, h: sticky}
+  - {t: LSHFT, h: sticky}
+  - {t: LALT, h: sticky}
   - F11
   - F4
   - F5
   - F6
   - F14
   - ''
-  - ''
-  - BT CLR
-  - BT PRV
-  - ''
+  - Meh+ 5
+  - Meh+ 4
+  - Meh+ 3
+  - Meh+ 2
   - F10
   - F1
   - F2
   - F3
   - F13
   - '&bootloader'
-  - ''
-  - ''
-  - ''
-  - ''
-  - '&bootloader'
+  - Meh+ 1
+  - Meh+ 0
+  - BT PRV
+  - BT NXT
+  - BT CLR
   NAV:
   - ''
   - ESC
-  - ''
-  - ''
+  - '&caps_word'
+  - CAPS
   - ''
   - ''
   - TAB
@@ -251,7 +251,7 @@ layers:
   - PP
   - PREV
   - NEXT
-  - {t: ▽, type: trans}
+  - ''
   - '&bootloader'
   - ''
   - SPACE

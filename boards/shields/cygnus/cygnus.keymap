@@ -110,7 +110,7 @@
                      bindings = <
    &kp Q               &kp W               &kp E               &kp R               &kp T               &kp Y               &kp U               &kp I               &kp O               &kp P
    &lt FUNCTIONS A     &mt LGUI S          &mt LCTRL D         &mt LSHFT F         &mt LALT G          &mt RALT H          &mt RSHFT J         &mt RCTRL K         &mt RGUI L          &ht_meh_qu 0 0
-   &kp Z               &kp X               &kp C               &kp V               &kp B               &kp N               &kp M               &kp COMMA           &kp DOT             &key_repeat        
+   &kp Z               &kp X               &kp C               &kp V               &kp B               &kp N               &kp M               &kp COMMA           &kp DOT             &kp SEMI        
                                            &to QWERTY          &ht_repeat NAV 0    &lt LOWER SPACE     &lt RAISE BACKSPACE &mk MEDIA LSHFT     &to ROMAK
                         >;
                 };
@@ -119,7 +119,7 @@
                      bindings = <
    &kp Q               &kp B               &kp M               &kp G               &kp K               &kp X               &kp L               &kp O               &kp U               &kp Y
    &lt FUNCTIONS D     &mt LGUI N          &mt LCTRL S         &mt LSHFT T         &mt LALT W          &mt RALT Z          &mt RSHFT R         &mt RCTRL A         &mt RGUI E          &ht_meh 0 I
-   &qu                 &kp F               &kp C               &kp P               &kp V               &kp J               &kp H               &kp COMMA           &kp DOT             &key_repeat         
+   &qu                 &kp F               &kp C               &kp P               &kp V               &kp J               &kp H               &kp COMMA           &kp DOT             &kp SEMI        
                                            &to QWERTY          &ht_repeat NAV 0    &lt LOWER SPACE     &lt RAISE BACKSPACE &mk MEDIA LSHFT     &to ROMAK
                         >;
                 };
@@ -137,23 +137,23 @@
                     bindings = <
    &none               &kp LT              &kp GT              &kp HASH            &none               &none               &kp PERCENT         &kp EQUAL         &kp COLON             &none
    &caret_space        &tilde_space        &dqt_space          &sqt_space          &grv_space          &none               &kp QUESTION        &kp MINUS         &kp PLUS              &kp DOLLAR
-   &kp CARET           &kp TILDE           &kp C               &kp SQT             &kp GRAVE           &none               &kp EXCL            &kp SLASH         &kp STAR              &kp SEMI          
+   &kp CARET           &kp TILDE           &kp C               &kp SQT             &kp GRAVE           &none               &kp EXCL            &kp SLASH         &kp STAR              &none          
                                            &trans              &key_repeat         &trans              &trans              &trans              &trans       
                           >;
                };
                 functions_layer {
                      display-name = "FUN";
                      bindings = <
-   &none               &none               &none               &none               &none               &kp F12             &kp F7              &kp F8              &kp F9              &kp F15 
-   &none               &none               &bt BT_SEL 0        &bt BT_NXT          &none               &kp F11             &kp F4              &kp F5              &kp F6              &kp F14      
-   &none               &none               &bt BT_CLR          &bt BT_PRV          &none               &kp F10             &kp F1              &kp F2              &kp F3              &kp F13
-                                           &bootloader         &none               &none               &none               &none               &bootloader
+   &none               &kp LS(LC(LA(N9)))  &kp LS(LC(LA(N8)))  &kp LS(LC(LA(N7)))  &kp LS(LC(LA(N6)))  &kp F12             &kp F7              &kp F8              &kp F9              &kp F15 
+   &none               &sk LGUI            &sk LCTRL           &sk LSHFT           &sk LALT            &kp F11             &kp F4              &kp F5              &kp F6              &kp F14      
+   &none               &kp LS(LC(LA(N5)))  &kp LS(LC(LA(N4)))  &kp LS(LC(LA(N3)))  &kp LS(LC(LA(N2)))  &kp F10             &kp F1              &kp F2              &kp F3              &kp F13
+                                           &bootloader         &kp LS(LC(LA(N1)))  &kp LS(LC(LA(N0)))  &bt BT_PRV          &bt BT_NXT          &bt BT_CLR
                         >;
                 };
                 navigation_layer {
                      display-name = "NAV";
                      bindings = <
-   &none               &kp ESC             &none               &none               &none               &none               &kp TAB             &kp ENTER           &kp ESC             &none
+   &none               &kp ESC             &caps_word          &kp CAPS            &none               &none               &kp TAB             &kp ENTER           &kp ESC             &none
    &none               &sk LGUI            &sk LCTRL           &sk LSHFT           &sk LALT            &none               &kp LEFT            &kp DOWN            &kp UP              &kp RIGHT
    &none               &kp PAGE_DOWN       &kp PAGE_UP         &none               &none               &none               &kp DEL             &kp HOME            &kp END             &kp INS
                                            &bootloader         &trans              &trans              &kp SPACE           &mo MEDIA           &bootloader
@@ -164,7 +164,7 @@
                     bindings = <
    &none               &none               &none               &none               &none               &none               &kp TAB             &kp ENTER           &kp ESC             &none
    &none               &none               &none               &none               &none               &none               &kp C_MUTE          &kp C_VOL_DN        &kp C_VOL_UP        &none
-   &none               &none               &none               &none               &none               &none               &kp C_PP            &kp C_PREV          &kp C_NEXT          &trans
+   &none               &none               &none               &none               &none               &none               &kp C_PP            &kp C_PREV          &kp C_NEXT          &none
                                            &bootloader         &none               &kp SPACE           &trans              &trans              &bootloader
                            >;
                 };

@@ -74,7 +74,7 @@ layers:
   - {t: LSHFT, h: MEDIA}
   - {t: ROMAK, h: toggle}
   LOWER:
-  - {t: ▽, type: trans}
+  - ''
   - '{'
   - '}'
   - \
@@ -94,7 +94,7 @@ layers:
   - '5'
   - '6'
   - .
-  - {t: ▽, type: trans}
+  - ''
   - '['
   - ']'
   - '|'

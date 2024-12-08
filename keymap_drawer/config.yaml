@@ -39,7 +39,43 @@ draw_config:
 parse_config:
   preprocess: true
   skip_binding_parsing: false
-  raw_binding_map: {}
+  raw_binding_map:
+    "&kp CAPSLOCK":
+      tap: CAPS LOCK
+    "&kp BACKSPACE":
+      tap: BACK SPACE
+    "&bootloader":
+      tap: BOOT
+    "&caps_word":
+      tap: CAPS word
+    "&key_repeat":
+      tap: REPEAT
+    "&caret_space":
+      tap: "^"
+    "&ccedil":
+      tap: "Ç"
+    "&tilde_space":
+      tap: "~"
+    "&dqt_space":
+      tap: '"'
+    "&sqt_space":
+      tap: "'"
+    "&grv_space":
+      tap: "`"
+    "&kp CARET":
+      tap: DEAD ^
+    "&kp TILDE":
+      tap: DEAD ~
+    "&kp DQT":
+      tap: 'DEAD "'
+    "&kp SQT":
+      tap: "DEAD '"
+    "&kp GRAVE":
+      tap: "DEAD `"
+    "&qu":
+      tap: QU
+    "&studio_unlock":
+      tap: STUDIO UNLOCK
   sticky_label: sticky
   toggle_label: toggle
   tap_toggle_label: tap-toggle

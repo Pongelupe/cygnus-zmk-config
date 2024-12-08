@@ -13,9 +13,8 @@
 #define ROMAK 1
 #define LOWER 2
 #define RAISE 3
-#define FUNCTIONS 4
+#define FUN 4
 #define NAV 5
-#define MEDIA 6
 
 / {
     behaviors {
@@ -79,26 +78,10 @@
             bindings = <&macro_tap &kp Q &kp U>;
         };
 
-        meh: meh {
+        ccedil: ccedil {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_tap &kp LCTRL &kp LSHFT &kp LALT>;
-        };
-
-        ht_meh: ht_meh {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            tapping-term-ms = <200>; 
-            flavor = "tap-preferred";
-            bindings = <&meh>, <&kp>;
-        };
-
-        ht_meh_qu: ht_meh_qu {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            tapping-term-ms = <200>; 
-            flavor = "tap-preferred";
-            bindings = <&meh>, <&qu>;
+            bindings = <&macro_tap &kp SQT &kp C>;
         };
     };
 
@@ -109,18 +92,18 @@
                      display-name = "QWERTY";
                      bindings = <
    &kp Q               &kp W               &kp E               &kp R               &kp T               &kp Y               &kp U               &kp I               &kp O               &kp P
-   &lt FUNCTIONS A     &mt LGUI S          &mt LCTRL D         &mt LSHFT F         &mt LALT G          &mt RALT H          &mt RSHFT J         &mt RCTRL K         &mt RGUI L          &ht_meh_qu 0 0
-   &kp Z               &kp X               &kp C               &kp V               &kp B               &kp N               &kp M               &kp COMMA           &kp DOT             &kp SEMI        
-                                           &to QWERTY          &ht_repeat NAV 0    &lt LOWER SPACE     &lt RAISE BACKSPACE &mk MEDIA LSHFT     &to ROMAK
+   &mt LGUI A          &mt LALT S          &mt LCTRL D         &mt LSHFT F         &kp G               &kp H               &mt RSHFT J         &mt RCTRL K         &mt RALT L          &mt RGUI SEMI
+   &kp Z               &kp X               &kp C               &kp V               &kp B               &kp N               &kp M               &kp COMMA           &kp DOT             &qu
+                                           &to QWERTY          &ht_repeat FUN 0    &lt LOWER SPACE     &lt RAISE BACKSPACE &mk NAV LSHFT       &to ROMAK
                         >;
                 };
                 romak_layer {
                      display-name = "ROMAK";
                      bindings = <
    &kp Q               &kp B               &kp M               &kp G               &kp K               &kp X               &kp L               &kp O               &kp U               &kp Y
-   &lt FUNCTIONS D     &mt LGUI N          &mt LCTRL S         &mt LSHFT T         &mt LALT W          &mt RALT Z          &mt RSHFT R         &mt RCTRL A         &mt RGUI E          &ht_meh 0 I
+   &mt LGUI D          &mt LALT N          &mt LCTRL S         &mt LSHFT T         &kp W               &kp Z               &mt RSHFT R         &mt RCTRL A         &mt RALT E          &mt RGUI I
    &qu                 &kp F               &kp C               &kp P               &kp V               &kp J               &kp H               &kp COMMA           &kp DOT             &kp SEMI        
-                                           &to QWERTY          &ht_repeat NAV 0    &lt LOWER SPACE     &lt RAISE BACKSPACE &mk MEDIA LSHFT     &to ROMAK
+                                           &to QWERTY          &ht_repeat FUN 0    &lt LOWER SPACE     &lt RAISE BACKSPACE &mk NAV LSHFT       &to ROMAK
                         >;
                 };
                 lower_layer {
@@ -128,47 +111,42 @@
                      bindings = <
    &none               &kp LBRC            &kp RBRC            &kp BSLH            &none               &none               &kp N7              &kp N8              &kp N9              &none
    &kp AT              &kp LPAR            &kp RPAR            &kp AMPS            &none               &none               &kp N4              &kp N5              &kp N6              &kp DOT  
-   &none               &kp LBKT            &kp RBKT            &kp PIPE            &none               &none               &kp N1              &kp N2              &kp N3              &kp COMMA
-                                           &trans              &trans              &trans              &lt RAISE BACKSPACE &lt MEDIA N0        &trans
+   &kp UNDERSCORE      &kp LBKT            &kp RBKT            &kp PIPE            &none               &none               &kp N1              &kp N2              &kp N3              &kp COMMA
+                                           &none               &none               &none               &trans              &lt NAV N0          &none 
                            >;
                 };
                 raise_layer {
                     display-name = "RAISE";
                     bindings = <
    &none               &kp LT              &kp GT              &kp HASH            &none               &none               &kp PERCENT         &kp EQUAL         &kp COLON             &none
-   &caret_space        &tilde_space        &dqt_space          &sqt_space          &grv_space          &none               &kp QUESTION        &kp MINUS         &kp PLUS              &kp DOLLAR
-   &kp CARET           &kp TILDE           &kp C               &kp SQT             &kp GRAVE           &none               &kp EXCL            &kp SLASH         &kp STAR              &none          
-                                           &trans              &key_repeat         &trans              &trans              &trans              &trans       
+   &caret_space        &sqt_space          &dqt_space          &tilde_space        &grv_space          &none               &kp QUESTION        &kp MINUS         &kp PLUS              &kp DOLLAR
+   &kp CARET           &kp SQT             &ccedil             &kp TILDE           &kp GRAVE           &none               &kp EXCL            &kp SLASH         &kp STAR              &none          
+                                           &none               &key_repeat         &kp SPACE           &none               &none               &none        
                           >;
                };
                 functions_layer {
                      display-name = "FUN";
                      bindings = <
-   &none               &kp LS(LC(LA(N9)))  &kp LS(LC(LA(N8)))  &kp LS(LC(LA(N7)))  &kp LS(LC(LA(N6)))  &kp F12             &kp F7              &kp F8              &kp F9              &kp F15 
-   &none               &sk LGUI            &sk LCTRL           &sk LSHFT           &sk LALT            &kp F11             &kp F4              &kp F5              &kp F6              &kp F14      
-   &none               &kp LS(LC(LA(N5)))  &kp LS(LC(LA(N4)))  &kp LS(LC(LA(N3)))  &kp LS(LC(LA(N2)))  &kp F10             &kp F1              &kp F2              &kp F3              &kp F13
-                                           &bootloader         &kp LS(LC(LA(N1)))  &kp LS(LC(LA(N0)))  &bt BT_PRV          &bt BT_NXT          &bt BT_CLR
+   &kp LS(LC(LA(N9)))  &kp LS(LC(LA(N8)))  &kp LS(LC(LA(N7)))  &kp LS(LC(LA(N6)))  &kp LS(LC(LA(N5)))  &kp F12             &kp F7              &kp F8              &kp F9              &kp F15 
+   &sk LGUI            &sk LALT            &sk LCTRL           &sk LSHFT           &kp LS(LC(LA(AT)))  &kp F11             &kp F4              &kp F5              &kp F6              &kp F14      
+   &kp LS(LC(LA(N4)))  &kp LS(LC(LA(N3)))  &kp LS(LC(LA(N2)))  &kp LS(LC(LA(N1)))  &kp LS(LC(LA(N0)))  &kp F10             &kp F1              &kp F2              &kp F3              &kp F13
+                                           &studio_unlock      &none               &bootloader         &bt BT_PRV          &bt BT_NXT          &bt BT_CLR
                         >;
                 };
                 navigation_layer {
-                     display-name = "NAV";
-                     bindings = <
-   &none               &kp ESC             &caps_word          &kp CAPS            &none               &none               &kp TAB             &kp ENTER           &kp ESC             &none
-   &none               &sk LGUI            &sk LCTRL           &sk LSHFT           &sk LALT            &none               &kp LEFT            &kp DOWN            &kp UP              &kp RIGHT
-   &none               &kp PAGE_DOWN       &kp PAGE_UP         &none               &none               &none               &kp DEL             &kp HOME            &kp END             &kp INS
-                                           &bootloader         &trans              &trans              &kp SPACE           &mo MEDIA           &bootloader
-                        >;
-                };
-                media_layer {
-                    display-name = "MEDIA";
+                    display-name = "NAV";
                     bindings = <
-   &none               &none               &none               &none               &none               &none               &kp TAB             &kp ENTER           &kp ESC             &none
-   &none               &none               &none               &none               &none               &none               &kp C_MUTE          &kp C_VOL_DN        &kp C_VOL_UP        &none
-   &none               &none               &none               &none               &none               &none               &kp C_PP            &kp C_PREV          &kp C_NEXT          &none
-                                           &bootloader         &none               &kp SPACE           &trans              &trans              &bootloader
+   &kp CAPSLOCK        &kp HOME            &kp UP              &kp END             &kp LS(LC(LA(LG(N3)))) &kp LS(LC(LA(LG(N6)))) &kp TAB             &kp ENTER           &kp ESC             &kp LS(LC(LA(LG(N9)))) 
+   &caps_word          &kp LEFT            &kp DOWN            &kp RIGHT           &kp LS(LC(LA(LG(N2)))) &kp LS(LC(LA(LG(N5)))) &kp C_MUTE          &kp C_VOL_DN        &kp C_VOL_UP        &kp LS(LC(LA(LG(N8)))) 
+   &kp INS             &kp PG_DN           &kp DEL             &kp PG_UP           &kp LS(LC(LA(LG(N1)))) &kp LS(LC(LA(LG(N4)))) &kp C_PP            &kp C_PREV          &kp C_NEXT          &kp LS(LC(LA(LG(N7)))) 
+                                           &none               &kp LS(LC(LA(LG(N0)))) &kp SPACE           &bootloader            &none               &none
                            >;
                 };
         
+                layer6 {
+                    status = "reserved";
+                };
+
                 layer7 {
                     status = "reserved";
                 };

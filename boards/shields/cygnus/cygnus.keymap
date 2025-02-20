@@ -127,7 +127,7 @@
                 functions_layer {
                      display-name = "FUN";
                      bindings = <
-   &kp LS(LC(LA(N9)))  &kp LS(LC(LA(N8)))  &kp LS(LC(LA(N7)))  &kp LS(LC(LA(N6)))  &kp LS(LC(LA(N5)))  &kp F12             &kp F7              &kp F8              &kp F9              &kp F15 
+   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &kp F12             &kp F7              &kp F8              &kp F9              &kp F15 
    &sk LGUI            &sk LALT            &sk LCTRL           &sk LSHFT           &kp LS(LC(LA(AT)))  &kp F11             &kp F4              &kp F5              &kp F6              &kp F14      
    &kp LS(LC(LA(N4)))  &kp LS(LC(LA(N3)))  &kp LS(LC(LA(N2)))  &kp LS(LC(LA(N1)))  &kp LS(LC(LA(N0)))  &kp F10             &kp F1              &kp F2              &kp F3              &kp F13
                                            &studio_unlock      &none               &bootloader         &bt BT_PRV          &bt BT_NXT          &bt BT_CLR

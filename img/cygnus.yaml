@@ -148,11 +148,11 @@ layers:
   - ''
   - ''
   FUN:
-  - Meh+ 9
-  - Meh+ 8
-  - Meh+ 7
-  - Meh+ 6
-  - Meh+ 5
+  - {t: BT, h: '0'}
+  - {t: BT, h: '1'}
+  - {t: BT, h: '2'}
+  - {t: BT, h: '3'}
+  - {t: BT, h: '4'}
   - F12
   - F7
   - F8

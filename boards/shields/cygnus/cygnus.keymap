@@ -10,11 +10,10 @@
 #include <dt-bindings/zmk/bt.h>
 
 #define QWERTY 0
-#define ROMAK 1
-#define LOWER 2
-#define RAISE 3
-#define FUN 4
-#define NAV 5
+#define LOWER 1
+#define RAISE 2
+#define FUN 3
+#define NAV 4
 
 / {
     behaviors {
@@ -72,12 +71,6 @@
             bindings = <&macro_tap &kp CARET &kp SPACE>;
         };
 
-        qu: qu {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_tap &kp Q &kp U>;
-        };
-
         ccedil: ccedil {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -92,18 +85,9 @@
                      display-name = "QWERTY";
                      bindings = <
    &kp Q               &kp W               &kp E               &kp R               &kp T               &kp Y               &kp U               &kp I               &kp O               &kp P
-   &hm LGUI A          &hm LALT S          &hm LCTRL D         &hm LSHFT F         &kp G               &kp H               &hm RSHFT J         &hm RCTRL K         &hm RALT L          &hm RGUI SEMI
-   &kp Z               &kp X               &kp C               &kp V               &kp B               &kp N               &kp M               &kp COMMA           &kp DOT             &qu
-                                           &to QWERTY          &ht_repeat FUN 0    &lt LOWER SPACE     &lt RAISE BACKSPACE &mk NAV LSHFT       &to ROMAK
-                        >;
-                };
-                romak_layer {
-                     display-name = "ROMAK";
-                     bindings = <
-   &kp Q               &kp B               &kp M               &kp G               &kp K               &kp X               &kp L               &kp O               &kp U               &kp Y
-   &mt LGUI D          &mt LALT N          &mt LCTRL S         &mt LSHFT T         &kp W               &kp Z               &mt RSHFT R         &mt RCTRL A         &mt RALT E          &mt RGUI I
-   &qu                 &kp F               &kp C               &kp P               &kp V               &kp J               &kp H               &kp COMMA           &kp DOT             &kp SEMI        
-                                           &to QWERTY          &ht_repeat FUN 0    &lt LOWER SPACE     &lt RAISE BACKSPACE &mk NAV LSHFT       &to ROMAK
+   &mt LGUI A          &mt LALT S          &mt LCTRL D         &mt LSHFT F         &kp G               &kp H               &mt RSHFT J         &mt RCTRL K         &mt RALT L          &mt RGUI SEMI
+   &kp Z               &kp X               &kp C               &kp V               &kp B               &kp N               &kp M               &kp COMMA           &kp DOT             &kp BACKSPACE
+                                           &kp LCTRL         &ht_repeat FUN 0    &lt LOWER SPACE     &lt RAISE BACKSPACE &mk NAV LSHFT       &kp LGUI
                         >;
                 };
                 lower_layer {
@@ -143,6 +127,10 @@
                            >;
                 };
         
+                layer5 {
+                    status = "reserved";
+                };
+
                 layer6 {
                     status = "reserved";
                 };

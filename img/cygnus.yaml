@@ -30,12 +30,12 @@ layers:
   - ','
   - .
   - BACK SPACE
-  - LCTRL D
+  - LCTRL
   - {t: REPEAT, h: FUN}
   - {t: SPACE, h: LOWER}
   - {t: BACK SPACE, h: RAISE}
   - {t: LSHFT, h: NAV}
-  - LGUI A
+  - LGUI
   LOWER:
   - ''
   - '{'

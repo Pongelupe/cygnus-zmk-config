@@ -8,12 +8,15 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 1500  // default: 600
+#include <dt-bindings/zmk/pointing.h>
 
 #define QWERTY 0
 #define LOWER 1
 #define RAISE 2
 #define FUN 3
 #define NAV 4
+#define MOUSE 5
 
 / {
     behaviors {
@@ -122,13 +125,18 @@
                     bindings = <
    &kp CAPSLOCK        &kp HOME            &kp UP              &kp END             &kp LS(LC(LA(LG(N3)))) &kp LS(LC(LA(LG(N6)))) &kp TAB             &kp ENTER           &kp ESC             &kp LS(LC(LA(LG(N9)))) 
    &caps_word          &kp LEFT            &kp DOWN            &kp RIGHT           &kp LS(LC(LA(LG(N2)))) &kp LS(LC(LA(LG(N5)))) &kp C_MUTE          &kp C_VOL_DN        &kp C_VOL_UP        &kp LS(LC(LA(LG(N8)))) 
-   &kp INS             &kp PG_DN           &kp DEL             &kp PG_UP           &kp LS(LC(LA(LG(N1)))) &kp LS(LC(LA(LG(N4)))) &kp C_PP            &kp C_PREV          &kp C_NEXT          &kp LS(LC(LA(LG(N7)))) 
+   &kp INS             &kp PG_DN           &kp DEL             &kp PG_UP           &kp LS(LC(LA(LG(N1)))) &lt MOUSE LS(LC(LA(LG(N4)))) &kp C_PP            &kp C_PREV          &kp C_NEXT          &kp LS(LC(LA(LG(N7)))) 
                                            &none               &kp LS(LC(LA(LG(N0)))) &kp SPACE           &bootloader            &none               &none
                            >;
                 };
-        
-                layer5 {
-                    status = "reserved";
+                navigation_mouse_layer {
+                    display-name = "MOUSE";
+                    bindings = <
+   &none        &mkp MB4            &mmv MOVE_UP        &mkp MB5            &msc SCRL_UP &none  &none   &none   &none   &none  
+   &none        &mmv MOVE_LEFT      &mmv MOVE_DOWN      &mmv MOVE_RIGHT     &msc SCRL_DOWN &none  &none   &none   &none   &none     
+   &msc SCRL_LEFT        &msc SCRL_RIGHT           &none           &none           &mkp MCLK &none  &none   &none   &none   &none    
+                                           &none               &mkp RCLK           &mkp LCLK              &none            &none               &none
+                           >;
                 };
 
                 layer6 {

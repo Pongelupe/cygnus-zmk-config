@@ -72,10 +72,34 @@ parse_config:
       tap: "DEAD '"
     "&kp GRAVE":
       tap: "DEAD `"
-    "&qu":
-      tap: QU
     "&studio_unlock":
       tap: STUDIO UNLOCK
+    "&mmv MOVE_UP":
+      tap: MOUSE UP
+    "&mmv MOVE_DOWN":
+      tap: MOUSE DOWN
+    "&mmv MOVE_LEFT":
+      tap: MOUSE LEFT
+    "&mmv MOVE_RIGHT":
+      tap: MOUSE RIGHT
+    "&msc SCRL_UP":
+      tap: SCROLL UP
+    "&msc SCRL_DOWN":
+      tap: SCROLL DOWN
+    "&msc SCRL_LEFT":
+      tap: SCROLL LEFT
+    "&msc SCRL_RIGHT":
+      tap: SCROLL RIGHT
+    "&mkp LCLK":
+      tap: LEFT CLICK
+    "&mkp RCLK":
+      tap: RIGHT CLICK
+    "&mkp MCLK":
+      tap: MIDDLE CLICK
+    "&mkp MB4":
+      tap: MOUSE BUTTON 4
+    "&mkp MB5":
+      tap: MOUSE BUTTON 5
   sticky_label: sticky
   toggle_label: toggle
   tap_toggle_label: tap-toggle

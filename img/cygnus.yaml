@@ -173,7 +173,7 @@ layers:
   - DEL
   - PG UP
   - Hyper+ 1
-  - Hyper+ 4
+  - {t: Hyper+ 4, h: MOUSE}
   - PP
   - PREV
   - NEXT
@@ -182,5 +182,42 @@ layers:
   - Hyper+ 0
   - SPACE
   - BOOT
+  - {type: held}
+  - ''
+  MOUSE:
+  - ''
+  - MOUSE BUTTON 4
+  - MOUSE UP
+  - MOUSE BUTTON 5
+  - '&msc SCRL_UP'
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - MOUSE LEFT
+  - MOUSE DOWN
+  - MOUSE RIGHT
+  - '&msc SCRL_DOWN'
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - '&msc SCROLL_LEFT'
+  - '&msc SCROLL_RIGHT'
+  - ''
+  - ''
+  - MIDDLE CLICK
+  - {type: held}
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - RIGHT CLICK
+  - LEFT CLICK
+  - ''
   - {type: held}
   - ''

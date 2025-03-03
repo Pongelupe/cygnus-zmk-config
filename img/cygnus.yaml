@@ -189,7 +189,7 @@ layers:
   - MOUSE BUTTON 4
   - MOUSE UP
   - MOUSE BUTTON 5
-  - '&msc SCRL_UP'
+  - SCROLL UP
   - ''
   - ''
   - ''
@@ -199,14 +199,14 @@ layers:
   - MOUSE LEFT
   - MOUSE DOWN
   - MOUSE RIGHT
-  - '&msc SCRL_DOWN'
+  - SCROLL DOWN
   - ''
   - ''
   - ''
   - ''
   - ''
-  - '&msc SCROLL_LEFT'
-  - '&msc SCROLL_RIGHT'
+  - SCROLL LEFT
+  - SCROLL RIGHT
   - ''
   - ''
   - MIDDLE CLICK
